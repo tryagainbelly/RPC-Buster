@@ -1,0 +1,6 @@
+{
+    "url": "https://test.com/xmlrpc.php",
+    "methodName":"metaWeblog.getUsersBlogs",
+    "user":"user",
+    "password":"password"
+}
