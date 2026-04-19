@@ -1,6 +1,9 @@
 {
     "url": "https://test.com/xmlrpc.php",
-    "methodName":"metaWeblog.getUsersBlogs",
-    "user":"user",
-    "password":"password"
+    "methodName":"wp.getProfile",
+    "user":"admin",
+    "password":"admin",
+    "wordlist_password":"/wordlist/rockyou.txt",
+    "blogid":"1",
+    "bad_flag":"Incorrect username or password."
 }

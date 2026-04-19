@@ -24,7 +24,7 @@ pip install requests
 RPC Buster is a tool for exploiting the ‘xmlrpc.php’ file using a brute-force attack.
 This file is present on WordPress sites, but depending on the site's configuration, we may not necessarily have access to it.
 
-### Fichier xmlrpc.php
+### xmlrpc.php file
 This is an API used for remotely managing certain features, such as user management, creating posts, and so on. What makes this file vulnerable is the fact that it handles authentication.
 Specifically, why is this of interest to an attacker? By default, on a WordPress site, the XML-RPC file is enabled and sends login credentials (username and password) in API requests without any protection.
 So, every time a request is made for certain methods, the system verifies the username and password directly within the request. And very often, this endpoint has no rate limits or lockout mechanisms, unlike the standard WordPress login page, which allows an attacker to perform a brute-force attack.
@@ -41,17 +41,21 @@ Example of a configuration using a wordlist:
 ```
 {
     "url": "https://test.com/xmlrpc.php",
-    "methodName":"metaWeblog.getUsersBlogs",
+    "methodName":"wp.getProfile",
     "user":"toto",
     "password":"",
-    "wordlist_password":"/wordlist/rockyou.txt"
+    "wordlist_password":"/wordlist/rockyou.txt",
+    "blogid":"1",
+    "bad_flag":"Incorrect username or password."
 }
+
+The bad flag changes depending on the language. By default, it is in English. It is up to you to change it to match the language selected by the site administrator.
 ```
 
 3. Usage: Run ‘rpcbuster.py’. If successful, the valid credentials are saved to hit.txt
 
 If an attacker manages to obtain valid credentials, they will have legitimate access to the site and will be able to distribute malware, spam, etc.
 
-### License 
+### Licence
 
 MIT (For authorized security research only)
