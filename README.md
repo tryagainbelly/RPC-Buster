@@ -49,8 +49,8 @@ Example of a configuration using a wordlist:
     "bad_flag":"Incorrect username or password."
 }
 
-The bad flag changes depending on the language. By default, it is in English. It is up to you to change it to match the language selected by the site administrator.
 ```
+The bad flag changes depending on the language. By default, it is in English. It is up to you to change it to match the language selected by the site administrator.
 
 3. Usage: Run ‘rpcbuster.py’. If successful, the valid credentials are saved to hit.txt
 
